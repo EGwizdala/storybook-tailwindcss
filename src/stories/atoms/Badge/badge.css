@@ -1,0 +1,3 @@
+.badge{
+    @apply bg-secondary-100 text-secondary-200 text-xs uppercase font-bold rounded-full absolute top-0 ml-2 mt-2 flex justify-between items-center;
+}

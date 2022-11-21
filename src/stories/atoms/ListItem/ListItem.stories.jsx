@@ -8,8 +8,16 @@ export default {
     component: ListItem,
     argTypes: {
         borderColor: { control: 'color' },
-        activeColor: { control: false }
-    }
+        activeColor: { control: false },
+        active: {control: 'boolean'}
+    },
+    decorators: [
+        (Story) => (
+            <ul style={{ listStyle: "none"}}>
+                <Story />
+            </ul>
+        )
+    ]
 };
 
 
@@ -17,32 +25,32 @@ const Template = (args) => <ListItem {...args} />;
     
 export const Default = Template.bind({});
 Default.args = {
-    icon: about
+    icon: 'about'
 };
 
 export const Active = Template.bind({});
 Active.args = {
-    icon: about,
+    icon: 'about',
     active: true,
     activeColor: 'primary',
 };
 
 export const About = Template.bind({});
 About.args = {
-    icon: about,
+    icon: 'about',
     label: "About"
 };
 
 
 export const Contact = Template.bind({});
 Contact.args = {
-    icon: contact,
+    icon: 'contact',
     label: "Contact"
 };
 
 export const Home = Template.bind({});
 Home.args = {
-    icon: home,
+    icon: 'home',
     label: "Home"
 };
 

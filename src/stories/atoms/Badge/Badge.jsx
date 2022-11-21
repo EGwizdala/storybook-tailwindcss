@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "./badge.css"
+import "./badge.css";
+import { Icon } from '../Icon/Icon';
 
-
-export const Badge = ({ backgroundColor, label, size }) => {
+export const Badge = ({ backgroundColor, label, size, ...props}) => {
 
   const badgeSize = {
     small: "p-2",
@@ -14,10 +14,9 @@ export const Badge = ({ backgroundColor, label, size }) => {
     <div
       className={`badge ${badgeSize[size]}`}
       style={backgroundColor && { backgroundColor }}
+      {...props}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 mr-1 inline-block" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
+      <Icon icon="clock"/>
       <span>{label}</span>
     </div>
   );

@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../Dropbox/Szkolenia/portfolio_challange"
+		},
+		{
+			"path": "../Dropbox/Szkolenia/tailwind"
+		},
+		{
+			"path": "../Dropbox/Szkolenia/STORYBOOK"
+		},
+		{
+			"path": "../Dropbox/PROJEKTY/KrawcowaPoGodzinach/tailor-after-hours"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "tailwind"
+	}
+}

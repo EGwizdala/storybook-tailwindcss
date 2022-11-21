@@ -1,16 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 
-import {ReactComponent as AboutLogo} from '../../assets/about.svg';
-import { ReactComponent as ContactLogo } from '../../assets/contact.svg';
-import {ReactComponent as HomeLogo} from '../../assets/home.svg';
+import { Icon } from '../Icon/Icon';
 
-export const ListItem = ({ icon, label, activeColor, active, borderColor}) => {
-
+export const ListItem = ({ icon, label, activeColor, active, borderColor, setActive}) => {
     const markerColor = active ? `border-${activeColor}` : null;
 
     return (
-        <li className="text-gray-700 py-1">
+        <li className="text-gray-700 py-1" onClick={setActive}>
             <a
                 href="#"
                 className={`px-4 flex justify-end border-r-4 ${markerColor}`}
@@ -18,7 +15,7 @@ export const ListItem = ({ icon, label, activeColor, active, borderColor}) => {
             >
                 <span>{label}</span>
                 <div className="ml-2 w-6 h-6" >
-                    {icon}
+                    <Icon icon={icon}/>
                 </div>
             </a>
         </li>
@@ -26,11 +23,12 @@ export const ListItem = ({ icon, label, activeColor, active, borderColor}) => {
 };
 
 ListItem.propTypes = {
-    icon: PropTypes.node,
+    icon: PropTypes.string,
     label: PropTypes.string,
     activeColor: PropTypes.string,
     active: PropTypes.bool,
-    borderColor: PropTypes.string
+    borderColor: PropTypes.string,
+    setActive: PropTypes.func
 };
 
 ListItem.defaultProps = {
